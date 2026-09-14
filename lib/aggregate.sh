@@ -13,10 +13,12 @@ aggregate_entry() {
     #Counting of attempt per IP
     attempt_count["$ip"]=$(( ${attempt_count[$ip]:-0} + 1 ))
     
+    #Checking and appending username
     if [[ "${usernames_tried["$ip"]}" != *"$user"* ]]; then
         usernames_tried["$ip"]+="$user "
     fi
 
+    #Checking first seen
     if [[ -z "${first_seen["$ip"]}" ]]; then
         first_seen["$ip"]="$time"
     fi

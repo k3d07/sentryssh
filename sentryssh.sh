@@ -2,12 +2,14 @@
 
 source lib/parse.sh
 source lib/aggregate.sh
+source lib/filter.sh
 
+WINDOWS_MINUTE="${1:-60}"
 LOGFILE="tests/sample-auth.log"
 
 if [[ -f "$LOGFILE" ]]; then
     echo "Found the log file at $LOGFILE"
-    parse_log "$LOGFILE"
+    parse_log "$LOGFILE" "$WINDOWS_MINUTE"
     print_aggregate
 else
     echo "ERROR: could not find $LOGFILE"
