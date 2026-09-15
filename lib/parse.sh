@@ -6,7 +6,7 @@ source lib/filter.sh
 parse_log() {
     local log_file="$1"
     local windows_minutes="$2"
-    while IFS= read -r line; do
+    while IFS= read -r line || [[ -n "$line" ]]; do
         if [[ "$line" == *"Failed password"* ]]; then
             if [[ "$line" =~ ([A-Za-z]{3}[[:space:]]+[0-9]{1,2}[[:space:]]+[0-9:]{8}).*Failed\ password\ for\ (invalid\ user\ )?([^[:space:]]+)\ from\ ([0-9.]+) ]]; then
                 ip="${BASH_REMATCH[4]}"

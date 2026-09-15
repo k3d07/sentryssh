@@ -27,11 +27,42 @@ aggregate_entry() {
 }
 
 print_aggregate() {
+    local threshold="$1"
+
+    echo "=== FLAGGED (threshold: $threshold) ==="
     for ip in $(printf "%s\n" "${!attempt_count[@]}" | sort); do
-        echo "IP: $ip"
-        echo "  Attempts: ${attempt_count["$ip"]}"
-        echo "  Usernames tried: ${usernames_tried["$ip"]}"
-        echo "  First seen: ${first_seen["$ip"]}"
-        echo "  Last seen:  ${last_seen["$ip"]}"
+        if is_flagged "$ip" "$threshold"; then
+            echo "IP: $ip"
+            echo "  Attempts: ${attempt_count["$ip"]}"
+            echo "  Usernames tried: ${usernames_tried["$ip"]}"
+            echo "  First seen: ${first_seen["$ip"]}"
+            echo "  Last seen:  ${last_seen["$ip"]}"
+
+            echo " "
+        fi
     done
+
+    echo "=== NORMAL ==="
+    for ip in $(printf "%s\n" "${!attempt_count[@]}" | sort); do
+        if ! is_flagged "$ip" "$threshold"; then
+            echo "IP: $ip"
+            echo "  Attempts: ${attempt_count["$ip"]}"
+            echo "  Usernames tried: ${usernames_tried["$ip"]}"
+            echo "  First seen: ${first_seen["$ip"]}"
+            echo "  Last seen:  ${last_seen["$ip"]}"
+
+            echo " "
+        fi
+    done
+}
+
+is_flagged() {
+    local ip="$1"
+    local threshold="$2"
+
+    if [[ "${attempt_count["$ip"]}" -ge "$threshold" ]]; then
+        return 0
+    else
+        return 1
+    fi
 }
