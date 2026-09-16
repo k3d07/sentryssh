@@ -3,3 +3,15 @@
 [Sep 16 2026 12:50:41] SUCCESS - Lines processed: 1 | IPs flagged: 1 | Threshold: 5 | Window: 999999
 [Sep 16 2026 12:51:54] SUCCESS - Lines processed: 14 | IPs flagged: 1 | Threshold: 5 | Window: 999999
 [Sep 16 2026 12:53:19] ERROR - Log file not found: tests/sample-auth.log
+[Sep 16 2026 13:50:41] SUCCESS - Lines processed: 14 | IPs flagged: 0 | Threshold: 5 | Window: 
+[Sep 16 2026 13:53:53] SUCCESS - Lines processed: 14 | IPs flagged: 0 | Threshold: 3 | Window: 
+[Sep 16 2026 13:53:53] SUCCESS - Lines processed: 14 | IPs flagged: 0 | Threshold: 3 | Window: 
+[Sep 16 2026 13:55:49] SUCCESS - Lines processed: 14 | IPs flagged: 0 | Threshold: 5 | Window: 
+[Sep 16 2026 13:55:49] SUCCESS - Lines processed: 14 | IPs flagged: 0 | Threshold: 5 | Window: 
+[Sep 16 2026 14:00:11] SUCCESS - Lines processed: 14 | IPs flagged: 0 | Threshold: 5 | Window: 
+[Sep 16 2026 14:01:02] SUCCESS - Lines processed: 14 | IPs flagged: 0 | Threshold: 5 | Window: 
+[Sep 16 2026 14:01:02] SUCCESS - Lines processed: 14 | IPs flagged: 0 | Threshold: 5 | Window: 
+[Sep 16 2026 14:26:10] SUCCESS - Lines processed: 14 | IPs flagged: 0 | Threshold: 5 | Window: 60
+[Sep 16 2026 14:26:10] SUCCESS - Lines processed: 14 | IPs flagged: 1 | Threshold: 5 | Window: 999999
+[Sep 16 2026 14:26:14] SUCCESS - Lines processed: 14 | IPs flagged: 0 | Threshold: 5 | Window: 60
+[Sep 16 2026 14:26:14] SUCCESS - Lines processed: 14 | IPs flagged: 1 | Threshold: 5 | Window: 999999
