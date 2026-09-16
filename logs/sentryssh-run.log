@@ -1,0 +1,5 @@
+[Sep 16 2026 12:37:44] SUCCESS - Lines processed: 0 | IPs flagged: 1 | Threshold: 5 | Window: 999999
+[Sep 16 2026 12:40:35] SUCCESS - Lines processed: 1 | IPs flagged: 1 | Threshold: 5 | Window: 999999
+[Sep 16 2026 12:50:41] SUCCESS - Lines processed: 1 | IPs flagged: 1 | Threshold: 5 | Window: 999999
+[Sep 16 2026 12:51:54] SUCCESS - Lines processed: 14 | IPs flagged: 1 | Threshold: 5 | Window: 999999
+[Sep 16 2026 12:53:19] ERROR - Log file not found: tests/sample-auth.log

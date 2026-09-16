@@ -66,3 +66,16 @@ is_flagged() {
         return 1
     fi
 }
+
+count_flagged() {
+    local threshold="$1"
+    local count=0
+
+    for ip in "${!attempt_count[@]}"; do
+        if is_flagged "$ip" "$threshold"; then
+            count=$(( count + 1 ))
+        fi
+    done
+
+    echo "$count"
+}

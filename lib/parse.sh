@@ -1,5 +1,7 @@
 #!/bin/bash
 
+TOTAL_LINES=0
+
 source lib/aggregate.sh
 source lib/filter.sh
 
@@ -18,5 +20,8 @@ parse_log() {
                 fi
             fi
         fi
+    
+    TOTAL_LINES=$(( TOTAL_LINES+1 ))
+
     done < "$log_file"
 }
